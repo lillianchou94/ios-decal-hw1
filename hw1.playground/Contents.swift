@@ -22,15 +22,16 @@ class Words {
 //: ### variables the same type? If not, why?
 
 
-//: [EXPLAIN YOUR ANSWER HERE]
+//: They are different. When the values are passed in they are optionals, but assigning
+//: them to the class variable, the optionals are forcefully unwrapped into string objects or nil.
 
 
 //: ## Q2: Variable Types and Function Types
-    func arePalindromes(words: [String]) -> Bool {
+    class func arePalindromes(words: [String]) -> Bool {
         let reversedWords = words.map() {String($0.characters.reverse())}
         var numElements = words.count
         
-        for let i = 0; i < numElements; i++ {
+        for var i = 0; i < numElements; i++ {
             if words[i] != reversedWords[i] {
                 return false
             }
@@ -41,21 +42,21 @@ class Words {
 //: ### change) the code at the very bottom. Debug the function.
 
 
-//: [EXPLAIN YOUR ANSWER HERE]
+//: The compiler doesn't like the for loop because we "let" defines the integer i, making i immutable. Also, this function has to be a class function in order for the user to call it without creating an instance.
 
 
 //: ## Q3: More Functions and Object Initialization
-    class func isAnagram() -> Bool {
-        var countLetters : [Character : Int] //Line X
-        var lenA = self.wordA.characters.count
-        var lenB = self.wordB.characters.count
+    func isAnagram() -> Bool {
+        var countLetters : [Character : Int] = [Character : Int] () //Line X
+        var lenA = wordA.characters.count
+        var lenB = wordB.characters.count
         
         if lenA != lenB {
             return false
         }
         
-        var arrA = Array(self.wordA.characters)
-        var arrB = Array(self.wordB.characters)
+        var arrA = Array(wordA.characters)
+        var arrB = Array(wordB.characters)
         
         for i in 0...lenA-1 {
             let letter = arrA[i]
@@ -81,7 +82,7 @@ class Words {
             }
         }
         
-        return nil
+        return true
     }
 //: ### What is the problem with declaring **countLetters** as we do in **Line X**,
 //: ### and then using it in **Line Y**? Fix it (by only changing **Line X**).
@@ -89,7 +90,7 @@ class Words {
 //: ### change) the code at the very bottom. Debug the function.
 
 
-//: [EXPLAIN YOUR ANSWER HERE]
+//: In line X, the original code didn't completely instantiate a dictionary object. This function needs to be a instance method for the user to call on the instance "wordsObj". Also, this function is set to return a bool so it cannot return nil.
     
     
 }
