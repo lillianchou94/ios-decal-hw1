@@ -36,13 +36,14 @@ class Words {
                 return false
             }
         }
+        return true
     }
 //: ### Why does the compiler dislike the **for loop**? Fix it.
 //: ### What else is wrong with this function? You may have to refer to (but **not**
 //: ### change) the code at the very bottom. Debug the function.
 
 
-//: The compiler doesn't like the for loop because we "let" defines the integer i, making i immutable. Also, this function has to be a class function in order for the user to call it without creating an instance.
+//: The compiler doesn't like the for loop because we "let" defines the integer i, making i immutable, but i needs to be mutable in order to increment, so we use var instead. Also, this function has to be a class function in order for the user to call it without creating an instance. This function also needs to return true outside of the for loop to ensure that in the case that the if statement isn't satistied, there's still a boolean return value.
 
 
 //: ## Q3: More Functions and Object Initialization
