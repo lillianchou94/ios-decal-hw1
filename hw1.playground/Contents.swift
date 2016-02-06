@@ -43,7 +43,12 @@ class Words {
 //: ### change) the code at the very bottom. Debug the function.
 
 
-//: The compiler doesn't like the for loop because we "let" defines the integer i, making i immutable, but i needs to be mutable in order to increment, so we use var instead. Also, this function has to be a class function in order for the user to call it without creating an instance. This function also needs to return true outside of the for loop to ensure that in the case that the if statement isn't satistied, there's still a boolean return value.
+//: The compiler doesn't like the for loop because we "let" defines the integer i, making i immutable, 
+//: but i needs to be mutable in order to increment, so we use var instead. 
+//: Also, this function has to be a class function in order for the user 
+//: to call it without creating an instance. This function also needs to 
+//: return true outside of the for loop to ensure that in the case that the 
+//: if statement isn't satistied, there's still a boolean return value.
 
 
 //: ## Q3: More Functions and Object Initialization
@@ -91,7 +96,9 @@ class Words {
 //: ### change) the code at the very bottom. Debug the function.
 
 
-//: In line X, the original code didn't completely instantiate a dictionary object. This function needs to be a instance method for the user to call on the instance "wordsObj". Also, this function is set to return a bool so it cannot return nil.
+//: In line X, the original code didn't completely instantiate a dictionary object. 
+//: This function needs to be a instance method for the user to call on the instance 
+//: "wordsObj". Also, this function is set to return a bool so it cannot return nil.
     
     
 }
